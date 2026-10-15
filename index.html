@@ -10,8 +10,8 @@
 <body>
 <main>
 <header>
-<h1>intelligence vs cost, all effort levels</h1>
-<p class="sub">artificial analysis intelligence index v4.3.2, cost in usd per task</p>
+<h1>intelligence vs cost and time, all effort levels</h1>
+<p class="sub">artificial analysis intelligence index v4.3.2, cost in usd and time in seconds per task</p>
 </header>
 
 <section class="readout" aria-live="polite">
@@ -22,8 +22,18 @@
 </div>
 </section>
 
+<div class="bar">
+<div class="views" id="views" role="group" aria-label="view">
+<span class="pill" aria-hidden="true"></span>
+<button type="button" data-view="c" aria-pressed="true">cost</button>
+<button type="button" data-view="t" aria-pressed="false">time</button>
+<button type="button" data-view="3d" aria-pressed="false">3d</button>
+</div>
+<p class="hint">drag to rotate</p>
+</div>
+
 <div class="chart" id="chart_wrap">
-<svg id="chart" role="group" tabindex="0" aria-label="pareto chart, intelligence index against cost per task"></svg>
+<svg id="chart" role="group" tabindex="0" aria-label="pareto cube, intelligence index against cost and time per task, drag to rotate"></svg>
 </div>
 
 <div class="controls">
@@ -51,11 +61,11 @@
 <button type="button" data-key="i" aria-pressed="true"><svg class="key s-r" viewBox="-8 -8 16 16" aria-hidden="true" focusable="false"><polygon points="0,-7 6.7,-2.2 4.1,5.7 -4.1,5.7 -6.7,-2.2"/></svg>mimo v2.6 pro</button>
 <button type="button" data-key="u" aria-pressed="true"><svg class="key s-r" viewBox="-8 -8 16 16" aria-hidden="true" focusable="false"><polygon points="-2.5,-7 2.5,-7 2.5,-2.5 7,-2.5 7,2.5 2.5,2.5 2.5,7 -2.5,7 -2.5,2.5 -7,2.5 -7,-2.5 -2.5,-2.5"/></svg>muse spark 1.3</button>
 </div>
-<div class="axis" id="axis" role="group" aria-label="cost axis">
+<div class="axis" id="axis" role="group" aria-label="axis scale">
 <button type="button" data-axis="log" aria-pressed="true">log</button>
 <button type="button" data-axis="linear" aria-pressed="false">linear</button>
 </div>
-<label class="budget">budget
+<label class="budget"><span id="budget_lbl">budget</span>
 <input type="range" id="budget" min="-1.69897" max="0.77815" step="0.001" value="0">
 <output id="budget_out" for="budget">$1.00</output>
 </label>
@@ -84,7 +94,7 @@
 </details>
 
 <footer>
-<p>artificial analysis intelligence index v4.3.2 (per the model pages) · 5.5 models fetched 12 oct 2026 · opus 5, deprecated on aa, fetched 14 oct 2026 · others (max unless noted) fetched 15 oct 2026: gpt 5.5 is xhigh (aa lists no max), gemini 3.1 pro is the preview, mimo v2.6 pro has no effort variant, deepseek v4 flash is 0731 · the 26 aug csv is v4.1.1, so its opus 5 scores are left out. <a href="https://artificialanalysis.ai/leaderboards/models" rel="noopener">artificial analysis leaderboard</a></p>
+<p>artificial analysis intelligence index v4.3.2 (per the model pages) · 5.5 models fetched 12 oct 2026 · opus 5, deprecated on aa, fetched 14 oct 2026 · others (max unless noted) fetched 15 oct 2026: gpt 5.5 is xhigh (aa lists no max), gemini 3.1 pro is the preview, mimo v2.6 pro has no effort variant, deepseek v4 flash is 0731 · time is aa's intelligence index time per task in seconds, fetched 15 oct 2026 · the 26 aug csv is v4.1.1, so its opus 5 scores are left out. <a href="https://artificialanalysis.ai/leaderboards/models" rel="noopener">artificial analysis leaderboard</a></p>
 </footer>
 </main>
 </body>
